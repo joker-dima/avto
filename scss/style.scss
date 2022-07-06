@@ -1,0 +1,177 @@
+// Global
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url("../fonts/PTSans-Bold.woff2"), url("../fonts/PTSans-Bold.woff");
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url("../fonts/PTSans-Regular.woff2"), url("../fonts/PTSans-Regular.woff");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+ul,
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    text-transform: uppercase;
+    color: #227aba;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    margin: 0;
+    font-size: 20px;
+    color: #262626;
+    list-style: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.wrapper {
+
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100%;
+    display: grid;
+    grid-template: minmax(50px, auto) 1fr minmax(70px, auto) / 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+
+// HEADER
+
+.header {
+
+    grid-area: header;
+    display: grid;
+    grid-template: 1fr / 1fr 2fr;
+    font-weight: 700;
+
+}
+
+.logo {
+
+    background-image: linear-gradient(to right, #3fb8ff, #1d7abd);
+
+}
+
+.nav__list {
+
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 70px;
+    justify-content: space-evenly;
+
+
+}
+
+.nav__item {
+    color: #aeaeae;
+
+    &:hover {
+        color: #2a7ab5;
+    }
+
+    &:active {
+        color: #1e4e70;
+    }
+}
+
+// BANNER
+
+.main {
+    grid-area: main;
+}
+
+.banner {
+    z-index: 4;
+    max-width: 1200px;
+    height: 500px;
+    background-image: url(../img/banner/back-banner.png), url(../img/banner/banner-1200x500.jpg);
+    background-position: bottom center, top center;
+    background-repeat: no-repeat, no-repeat;
+}
+
+// О Компании
+
+.about-company {
+    position: relative;
+
+}
+
+.about-company__text {
+    padding: 10px;
+    position: absolute;
+    top: 15px;
+    left: 100px;
+    // background-color: #aeaeae;
+    max-width: 400px;
+
+    p {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    li {
+        list-style-image: url(../img/banner/check.png)
+    }
+}
+
+.about-company__image {
+
+    position: absolute;
+    right: 0;
+    top: -70px;
+    max-width: 600px;
+    // overflow: hidden;
+}
