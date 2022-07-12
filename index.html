@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Пассажирские перевозки в Волгограде</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="css/normalize.css" rel="stylesheet">
 </head>
 
 <body>
@@ -18,6 +19,7 @@
         <header class="header">
 
             <div class="logo">
+                <img width="80" src="img/logo.svg" alt="Логотип ТЭКИ">
             </div>
             <nav class="nav">
                 <ul class="nav__list">
@@ -36,14 +38,9 @@
                             Контакты
                         </li>
                     </a>
-                    <a href="contacts.html">
-                        <li class="nav__item">
-                            О нас
-                        </li>
-                    </a>
                 </ul>
-
             </nav>
+            <div class="toggle"></div>
             <!-- <div class="header__contacts">
                 Телефон: +79933560609
             </div> -->
@@ -77,10 +74,7 @@
             </div>
 
             <div class="our-transport-wrapper">
-                <span>
-                </span>
             </div>
-
 
             <div class="our-transport__content">
                 <h2>Наш транспорт</h2>
@@ -102,6 +96,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="card">
                         <div class="imgBx">
                             <img src="img/cards/bus-2.jpg" alt="">
@@ -139,30 +134,68 @@
                 </div>
             </div>
 
-            <div class="contacts">
+            <div class="contacts-wrapper">
                 <h2>Наши контакты</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolores facilis laborum cumque
-                    repudiandae quam nostrum laboriosam explicabo atque a eaque ipsum, harum asperiores natus. Voluptate
-                    vero incidunt eveniet, quibusdam adipisci eum ut consequatur ratione. Esse ipsum soluta molestias
-                    harum rem consequatur dolores facilis odio incidunt, provident voluptas laboriosam tempora eligendi
-                    repellendus maxime aspernatur sequi, voluptates delectus ipsa veritatis officiis quaerat quis vel.
-                    Facere ex architecto numquam consequuntur quae, odio alias hic non ducimus eius, adipisci saepe et
-                    explicabo est! Natus illo dignissimos iusto eligendi corrupti commodi? Exercitationem ipsa, maiores
-                    excepturi molestiae, nemo, et adipisci impedit vitae quos nostrum vel soluta iure odit repudiandae
-                    iusto neque voluptatem amet id expedita. Eligendi tempore laboriosam quidem officiis atque id
-                    quisquam provident debitis perspiciatis consectetur nesciunt aperiam non maiores harum, consequuntur
-                    fugit quibusdam placeat illo blanditiis, fugiat obcaecati nobis. Vero ab mollitia quos placeat
-                    consectetur sed libero id corporis voluptatum totam expedita commodi, perferendis nihil, quibusdam
-                    natus eum quasi nemo fugiat! Aliquam in assumenda, rerum nulla perferendis quae doloremque eius
-                    minima rem quis alias quos consequatur nesciunt maiores, enim esse consectetur corporis optio?
-                    Aliquid sit debitis tempore voluptas. Quaerat reiciendis perspiciatis omnis ipsam provident commodi
-                    quae alias architecto corrupti facere, officia fuga? Dolores!</p>
+                <div class="contacts">
+                    <div class="contacts__items">
+                        <p class="contacts__item">
+                            <img width="30" src="img/icons/phone.svg" alt="Иконка позвонить в ТЭКИ"> <a
+                                href="tel:+79933560609">+7 993 356 06 09</a>
+                        </p>
+                        <p class="contacts__item">
+                            <img width="30" src="img/icons/email.svg" alt="Иконка написать в ТЭКИ"> <a
+                                href="mailto:sf@bk.ru">aaa@mail.ru</a>
+                        </p>
+                        <p class="contacts__item">
+                            <img width="30" src="img/icons/telegram.svg" alt="Иконка телеграмм ТЭКИ"> <a
+                                href="https://t.me/+79933560609" target="_blank">Telegramm</a>
+                        </p>
+                        <p class="contacts__item">
+                            <img width="30" src="img/icons/whatsapp.svg" alt="Иконка в ватсап ТЭКИ"> <a
+                                href="whatsapp://send?phone=79933560609" target="_blank">WhatsApp</a>
+                        </p>
+                    </div>
+
+                    <div class="contact-form">
+                        <h4>Заказать обратный звонок</h4>
+                        <form id="contact" action="mail.php" method="post">
+                            <div id="note"></div>
+                            <div id="fields">
+                                <p><input maxlength="15" type="number" name="email" id="email" placeholder="Телефон"
+                                        required>
+                                <p><textarea maxlength="100" name="message" cols="1" rows="2" id="comment"
+                                        placeholder="Коментарий (необязательно)"></textarea></p>
+                                <div data-size="compact" class="g-recaptcha"
+                                    data-sitekey="6LeFAB4gAAAAAMxoydugqHVFWVI1kO6IyPUqfGpL"></div>
+                                <p class="notification">Нажимая на кнопку «Перезвоните мне», Вы даете согласие на <a
+                                        target="_blank" style="text-decoration: underline" href="personal-data.html">
+                                        обработку
+                                        персональных данных</a> </p>
+                                <p><button type="submit" id="submit" class="go">Перезвоните мне</button></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
+
+
 
         </main>
 
         <footer class="footer">
+            <div class="footer__wrapper">
 
+                <div class="footer__content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
+                    libero eos! Amet vero ullam enim
+                    labore omnis alias veritatis ipsam sapiente molestias eum aliquid, totam itaque nihil deleniti
+                    voluptate
+                    quod. Laboriosam voluptates at exercitationem cum? Minima, consectetur vel culpa magnam sed
+                    quibusdam
+                    vitae, distinctio deserunt porro itaque atque libero necessitatibus!</div>
+
+
+
+            </div>
 
         </footer>
 
@@ -213,6 +246,7 @@
 
 
     </div>
+    <script src="js/scrypt.js"></script>
 </body>
 
 </html>

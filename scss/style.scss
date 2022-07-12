@@ -1,5 +1,6 @@
 // Global
 
+
 @font-face {
     font-family: 'PT Sans';
     src: url("../fonts/PTSans-Bold.woff2"), url("../fonts/PTSans-Bold.woff");
@@ -86,9 +87,73 @@ li {
         "footer";
 }
 
+// Форма обратной связи
+
+@import "_feedback";
+
+
+
+
+// BURGER MENU
+
+
+.toggle {
+    border-radius: 5px;
+    margin-top: 3px;
+
+
+    @media (min-width: 601px) {
+        display: none;
+    }
+
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: #1d7abd;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+
+    &:before {
+        content: " ";
+        position: absolute;
+        width: 28px;
+        height: 2px;
+        background: white;
+        transition: 0.2s;
+        transform: translateY(-10px);
+        box-shadow: 0 10px 0 white;
+    }
+
+    &:after {
+        content: " ";
+        position: absolute;
+        width: 28px;
+        height: 2px;
+        background: white;
+        transition: 0.2s;
+        transform: translateY(10px);
+    }
+}
+
+.toggle.active {
+    background: #3db6fd;
+
+    &::before {
+        transform: translateY(0px) rotate(45deg);
+        box-shadow: 0 0 0 white;
+    }
+
+    &::after {
+        transform: translateY(0px) rotate(-45deg);
+    }
+
+}
+
 
 // HEADER
-
 .header {
 
     grid-area: header;
@@ -96,16 +161,23 @@ li {
     grid-template: 1fr / 1fr 2fr;
     font-weight: 700;
 
+    @media (max-width: 600px) {
+        grid-template: 1fr / 1fr 1fr 70px;
+    }
+
 }
 
 .logo {
 
     background-image: linear-gradient(to right, #3fb8ff, #1d7abd);
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav__list {
 
+    position: relative;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -113,11 +185,69 @@ li {
     height: 70px;
     justify-content: space-evenly;
 
+    @media (max-width:600px) {
+        display: none;
+        gap: 0;
+    }
+}
 
+.nav__list.active {
+
+    @media (max-width:600px) {
+        border-radius: 5px;
+        width: 200px;
+        height: 180px;
+        display: flex;
+        justify-content: center;
+        background-color: #3fb8ff;
+        position: absolute;
+        top: 65px;
+        right: 10px;
+
+
+        a {
+            list-style: none;
+            text-align: center;
+
+            @media (max-width:600px) {
+                line-height: 60px;
+                padding: 0;
+                height: 60px;
+                box-shadow: 0px 1px 0px rgba(1, 1, 1, 0.4), inset 0px 2px 0px rgba(255, 255, 255, 0.2);
+                width: 100%;
+
+                &:first-child {
+                    box-shadow: none;
+                    box-shadow: 0px 1px 0px rgba(1, 1, 1, 0.4)
+                }
+
+                &:last-child {
+                    box-shadow: inset 0px 2px 0px rgba(255, 255, 255, 0.2);
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+                    background-repeat: no-repeat;
+                    background-size: 100% 7px;
+                    background-position: bottom;
+                }
+
+                &:hover {
+                    background-color: #74b4d7;
+                }
+
+                &:active {
+                    background-color: #4487b2;
+                }
+            }
+        }
+    }
 }
 
 .nav__item {
-    color: #aeaeae;
+
+    color: #262626;
+
+    @media (max-width:600px) {
+        color: white;
+    }
 
     &:hover {
         color: #2a7ab5;
@@ -127,6 +257,7 @@ li {
         color: #1e4e70;
     }
 }
+
 
 // BANNER
 
@@ -148,6 +279,7 @@ li {
 .about-company {
     position: relative;
     height: 400px;
+
 }
 
 .about-company__text {
@@ -177,10 +309,11 @@ li {
 }
 
 .our-transport-wrapper {
+
     position: relative;
 
-
-    span {
+    &::before {
+        content: ' ';
         max-width: 1200px;
         height: 200px;
         position: absolute;
@@ -198,7 +331,9 @@ li {
 .our-transport__content {
     background-color: #e8e8e8;
     margin-top: 30px;
-
+    background-image: url(../img/pattern.png);
+    background-position: bottom center;
+    background-repeat: repeat;
 
     h2 {
         text-align: center;
@@ -213,6 +348,7 @@ li {
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 80px 10px;
+    padding-bottom: 30px;
 }
 
 .card {
@@ -336,11 +472,124 @@ li {
 
 // Контакты
 
-.contacts {
-    padding: 30px;
+
+.contacts-wrapper {
+    background-image: url(../img/pattern.png);
+    background-position: bottom center;
+    background-repeat: repeat;
     background-color: #e8e8e8;
+
+    h3 {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    &::after {
+        content: ' ';
+        display: block;
+        width: 100%;
+        height: 125px;
+        background-image: url(../img/banner/back-banner2.png);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        transform: rotate(180deg);
+        transform: scale(1, -1);
+        background-color: #fff;
+    }
 
     h2 {
         text-align: center;
+        padding-bottom: 20px;
     }
+
+    p {
+        margin: 20px;
+    }
+}
+
+.contacts {
+    padding-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    background-position: bottom center;
+    background-repeat: repeat;
+
+}
+
+.contacts__items {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts__item {
+    display: flex;
+    gap: 10px;
+    background-color: white;
+    border-radius: 20px;
+    height: 30px;
+    position: relative;
+    align-items: center;
+    padding-right: 10px;
+
+
+    a {
+        &:hover {
+            color: #2a7ab5;
+        }
+
+        &:active {
+            color: #1e4e70;
+        }
+    }
+
+    img {
+        position: absolute;
+        left: 10px;
+    }
+
+    &::before {
+        content: " ";
+        width: 50px;
+        height: 30px;
+        background-image: linear-gradient(to left, #3fb8ff, #1d7abd);
+        border-radius: 20px;
+    }
+
+
+    a {
+        font-size: 1.25em;
+        font-weight: 700;
+        color: #555;
+        line-height: 1.2em;
+    }
+}
+
+
+// Футер
+
+footer {
+    background-color: #207dc0;
+    margin-top: 50px;
+}
+
+.footer__wrapper {
+    position: relative;
+
+    &::before {
+        content: " ";
+        background-image: url(../img/banner/back-footer.png);
+        background-position: top center;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 100%;
+        height: 125px;
+        top: -115px
+    }
+}
+
+.footer__content {
+    padding: 30px;
+    color: white;
 }

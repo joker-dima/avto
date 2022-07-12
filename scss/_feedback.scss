@@ -1,0 +1,133 @@
+.contact-form {
+	margin: 0 10px;
+
+	h4 {
+		font-size: 1.25em;
+		font-weight: 700;
+		color: #555;
+		line-height: 1.2em;
+		margin-top: 5px;
+		text-align: center;
+		margin-bottom: 5px;
+	}
+}
+
+form#contact {
+	background-color: white;
+	border-radius: 30px;
+	padding: 20px;
+	box-shadow: 0 0 1px 1px rgb(179, 179, 179);
+	margin: 0 auto;
+	max-width: 400px;
+
+}
+
+#contact label {
+	font-size: 14px;
+}
+
+#contact input:required:valid {
+	box-shadow: 0 0 3px white;
+	border-color: #74b4d7 !important;
+	background: rgb(255, 255, 255) url(../img/valid.png) no-repeat 98% center;
+}
+
+#contact textarea:required:valid {
+	box-shadow: 0 0 3px white;
+	border-color: #74b4d7 !important;
+}
+
+#contact input:focus:invalid {
+	box-shadow: 0 0 3px #4487b2;
+	border-color: #186b9f !important;
+	background: white url(../img/invalid.png) no-repeat 98% center;
+}
+
+#contact textarea:focus:invalid {
+	box-shadow: 0 0 3px #0a4062;
+	border-color: #072d45 !important;
+}
+
+.err {
+	border: 1px solid #072d45;
+	padding: 10px;
+	background: #74b4d7;
+	text-align: left;
+	border-radius: 3px;
+}
+
+.ok {
+	border: 1px #072d45 solid;
+	margin: auto 0;
+	padding: 10px;
+	background: #f5f9fd;
+	text-align: center;
+	border-radius: 3px;
+}
+
+#email,
+#url {
+	width: 60%;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #e5e5e5;
+
+	@media (max-width:500px) {
+		width: 95%;
+	}
+}
+
+#comment {
+	width: 100%;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #e5e5e5;
+	box-sizing: border-box;
+}
+
+#submit {
+	text-transform: uppercase;
+	font-weight: 700;
+	background: #74b4d7;
+	font-size: 15px;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	background-image: linear-gradient(to right, #3fb8ff, #1d7abd);
+	border-radius: 20px;
+
+	&:hover {
+		background-image: linear-gradient(to left, #3fb8ff, #1d7abd);
+	}
+}
+
+input::-ms-clear {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+input:focus::-webkit-input-placeholder {
+	color: transparent;
+	border: none;
+	outline: none;
+}
+
+textarea:focus::-webkit-input-placeholder {
+	color: transparent;
+	border: none;
+	outline: none;
+}
+
+input,
+textarea,
+input:active,
+textarea:active,
+:focus {
+	outline: none;
+}
+
+.notification {
+	font-size: 12px;
+}
