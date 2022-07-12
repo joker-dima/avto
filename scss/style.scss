@@ -230,11 +230,11 @@ li {
                 }
 
                 &:hover {
-                    background-color: #74b4d7;
+                    background-color: #1d7abd;
                 }
 
                 &:active {
-                    background-color: #4487b2;
+                    background-color: #185c8d;
                 }
             }
         }
@@ -251,10 +251,18 @@ li {
 
     &:hover {
         color: #2a7ab5;
+
+        @media (max-width:600px) {
+            color: white;
+        }
     }
 
     &:active {
         color: #1e4e70;
+
+        @media (max-width:600px) {
+            color: white;
+        }
     }
 }
 
@@ -590,6 +598,35 @@ footer {
 }
 
 .footer__content {
-    padding: 30px;
-    color: white;
+    display: grid;
+    grid-template: 1fr / 80px 1fr 80px;
+    gap: 20px;
+    justify-items: center;
+    padding: 10px 30px 10px 30px;
+
+    @media (max-width:600px) {
+        grid-template: 70px 1fr / 1fr;
+        padding: 10px;
+    }
+
+}
+
+.personal-data {
+    p {
+
+        text-align: center;
+        line-height: 12px;
+    }
+
+    p a {
+
+        font-size: 12px;
+        color: white;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+            color: rgb(165, 165, 165);
+        }
+    }
 }
