@@ -290,6 +290,7 @@ textarea:active,
 }
 
 .nav__list {
+  z-index: 2;
   position: relative;
   display: flex;
   gap: 20px;
@@ -303,6 +304,18 @@ textarea:active,
   .nav__list {
     display: none;
     gap: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation-name: showBurger;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes showBurger {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -386,7 +399,7 @@ textarea:active,
 }
 
 .banner {
-  z-index: 4;
+  position: relative;
   max-width: 1200px;
   height: 500px;
   background-image: url(../img/banner/back-banner.png), url(../img/banner/banner-1200x500.jpg);
@@ -394,17 +407,89 @@ textarea:active,
   background-repeat: no-repeat, no-repeat;
 }
 
+@media (max-width: 600px) {
+  .banner {
+    height: 300px;
+    background-image: url(../img/banner/back-banner.png), url(../img/banner/banner-600x300.jpg);
+    background-position: bottom center, top center;
+    background-repeat: no-repeat, no-repeat;
+  }
+}
+
+.banner__contacts {
+  color: white;
+  text-shadow: 1px 1px 1px #000;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 500px;
+}
+
+@media (max-width: 600px) {
+  .banner__contacts img {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 601px) {
+  .banner__contacts img {
+    margin: 0 auto;
+    margin-top: 90px;
+  }
+}
+
 .about-company {
   position: relative;
   height: 400px;
 }
 
+@media (max-width: 1030px) {
+  .about-company {
+    height: 320px;
+  }
+}
+
+@media (max-width: 840px) {
+  .about-company {
+    height: 270px;
+  }
+}
+
+@media (max-width: 408px) {
+  .about-company {
+    height: 300px;
+  }
+}
+
 .about-company__text {
-  padding: 10px;
+  padding: 30px 0px 0px 0px;
   position: absolute;
-  top: 35px;
+  top: 25px;
   left: 170px;
-  max-width: 400px;
+  max-width: 350px;
+}
+
+@media (max-width: 1030px) {
+  .about-company__text {
+    padding: 0px 0px 0px 0px;
+    left: 100px;
+  }
+}
+
+@media (max-width: 840px) {
+  .about-company__text {
+    padding: 0px 0px 0px 0px;
+    left: 60px;
+    top: 5px;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-company__text {
+    max-width: 100%;
+  }
 }
 
 .about-company__text p {
@@ -412,8 +497,41 @@ textarea:active,
   margin-bottom: 10px;
 }
 
+@media (max-width: 840px) {
+  .about-company__text p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-company__text p {
+    font-size: 16px;
+    text-align: center;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-company__text ul {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+
 .about-company__text li {
   list-style-image: url(../img/banner/check.png);
+}
+
+@media (max-width: 840px) {
+  .about-company__text li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-company__text li {
+    font-size: 16px;
+  }
 }
 
 .about-company__image {
@@ -421,6 +539,30 @@ textarea:active,
   right: 0;
   top: -70px;
   max-width: 600px;
+}
+
+@media (max-width: 840px) {
+  .about-company__image {
+    top: -50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-company__image {
+    display: none;
+  }
+}
+
+@media (max-width: 1030px) {
+  .about-company__image img {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 840px) {
+  .about-company__image img {
+    max-width: 300px;
+  }
 }
 
 .our-transport-wrapper {
@@ -447,6 +589,7 @@ textarea:active,
   background-image: url(../img/pattern.png);
   background-position: bottom center;
   background-repeat: repeat;
+  padding: 10px;
 }
 
 .our-transport__content h2 {
@@ -464,7 +607,7 @@ textarea:active,
 
 .card {
   position: relative;
-  width: 350px;
+  width: 300px;
   height: 210px;
   background: #fff;
   border-radius: 20px;

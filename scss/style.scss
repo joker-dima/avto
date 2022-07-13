@@ -101,7 +101,6 @@ li {
     border-radius: 5px;
     margin-top: 3px;
 
-
     @media (min-width: 601px) {
         display: none;
     }
@@ -139,6 +138,7 @@ li {
 }
 
 .toggle.active {
+
     background: #3db6fd;
 
     &::before {
@@ -176,7 +176,7 @@ li {
 }
 
 .nav__list {
-
+    z-index: 2;
     position: relative;
     display: flex;
     gap: 20px;
@@ -188,6 +188,18 @@ li {
     @media (max-width:600px) {
         display: none;
         gap: 0;
+        opacity: 0;
+        transform: translateY(-10px);
+        animation-name: showBurger;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes showBurger {
+    100% {
+        opacity: 1;
+        transform: translateY(0)
     }
 }
 
@@ -267,6 +279,8 @@ li {
 }
 
 
+
+
 // BANNER
 
 .main {
@@ -274,12 +288,47 @@ li {
 }
 
 .banner {
-    z-index: 4;
+    position: relative;
     max-width: 1200px;
     height: 500px;
     background-image: url(../img/banner/back-banner.png), url(../img/banner/banner-1200x500.jpg);
     background-position: bottom center, top center;
     background-repeat: no-repeat, no-repeat;
+
+    @media (max-width: 600px) {
+        height: 300px;
+        background-image: url(../img/banner/back-banner.png), url(../img/banner/banner-600x300.jpg);
+        background-position: bottom center, top center;
+        background-repeat: no-repeat, no-repeat;
+    }
+
+}
+
+.banner__contacts {
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    // justify-content: center;
+    height: 500px;
+
+    @media (max-width:600px) {
+        img {
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+    }
+
+    @media (min-width:601px) {
+        img {
+            margin: 0 auto;
+            margin-top: 90px;
+        }
+    }
+
+    // width: 400px;
 }
 
 // О Компании
@@ -288,36 +337,107 @@ li {
     position: relative;
     height: 400px;
 
+    @media (max-width:1030px) {
+        height: 320px;
+    }
+
+    @media (max-width:840px) {
+        height: 270px;
+    }
+
+    @media (max-width:408px) {
+        height: 300px;
+    }
 }
 
 .about-company__text {
-    padding: 10px;
+    padding: 30px 0px 0px 0px;
     position: absolute;
-    top: 35px;
+    top: 25px;
     left: 170px;
-    max-width: 400px;
+    max-width: 350px;
+
+    @media (max-width:1030px) {
+        padding: 0px 0px 0px 0px;
+        left: 100px;
+
+    }
+
+    @media (max-width:840px) {
+        padding: 0px 0px 0px 0px;
+        left: 60px;
+        top: 5px;
+        max-width: 250px;
+    }
+
+    @media (max-width:600px) {
+        max-width: 100%;
+    }
 
     p {
         font-size: 20px;
         margin-bottom: 10px;
+
+        @media (max-width:840px) {
+            font-size: 14px;
+        }
+
+        @media (max-width:600px) {
+            font-size: 16px;
+            text-align: center;
+            padding-right: 40px;
+        }
+    }
+
+    ul {
+
+        @media (max-width:600px) {
+            max-width: 220px;
+            margin: 0 auto;
+        }
     }
 
     li {
-        list-style-image: url(../img/banner/check.png)
+
+        list-style-image: url(../img/banner/check.png);
+
+        @media (max-width:840px) {
+            font-size: 14px;
+        }
+
+        @media (max-width:600px) {
+            font-size: 16px;
+        }
     }
 }
 
 .about-company__image {
-
     position: absolute;
     right: 0;
     top: -70px;
     max-width: 600px;
 
+    @media (max-width:840px) {
+        top: -50px;
+    }
+
+    @media (max-width:600px) {
+        display: none;
+    }
+
+
+    img {
+        @media (max-width:1030px) {
+            max-width: 400px;
+        }
+
+        @media (max-width:840px) {
+            max-width: 300px;
+        }
+    }
 }
 
 .our-transport-wrapper {
-
     position: relative;
 
     &::before {
@@ -332,7 +452,6 @@ li {
         background-image: url(../img/banner/back-banner2.png);
         background-position: top center;
         background-repeat: no-repeat;
-
     }
 }
 
@@ -342,6 +461,7 @@ li {
     background-image: url(../img/pattern.png);
     background-position: bottom center;
     background-repeat: repeat;
+    padding: 10px;
 
     h2 {
         text-align: center;
@@ -362,7 +482,7 @@ li {
 .card {
 
     position: relative;
-    width: 350px;
+    width: 300px;
     height: 210px;
     background: #fff;
     border-radius: 20px;
