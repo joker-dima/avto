@@ -177,12 +177,19 @@ form#contact {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  background-image: linear-gradient(to right, #3fb8ff, #1d7abd);
-  border-radius: 20px;
+  background: linear-gradient(to right, rgba(66, 186, 252, 0.8) 0%, #217ebc 25%, rgba(32, 124, 186, 0.8) 75%, rgba(65, 185, 251, 0.8) 100%);
+  background-repeat: no-repeat;
+  background-size: 300% 300%;
+  transition: 0.5s;
+  border-radius: 10px;
 }
 
 #submit:hover {
-  background-image: linear-gradient(to left, #3fb8ff, #1d7abd);
+  background-position: 100% 100%;
+}
+
+#submit:active {
+  background-position: 50% 50%;
 }
 
 input::-ms-clear {
@@ -462,24 +469,9 @@ textarea:active,
 .banner__contacts {
   color: white;
   text-shadow: 1px 1px 1px #000;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  height: 500px;
-}
-
-@media (max-width: 600px) {
-  .banner__contacts img {
-    margin: 0 auto;
-    margin-top: 50px;
-  }
-}
-
-@media (min-width: 601px) {
-  .banner__contacts img {
-    margin: 0 auto;
-    margin-top: 90px;
-  }
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 .about-company {
@@ -632,7 +624,6 @@ textarea:active,
   background-image: url(../img/pattern.png);
   background-position: bottom center;
   background-repeat: repeat;
-  padding: 10px;
 }
 
 .our-transport__content h2 {
@@ -656,6 +647,7 @@ textarea:active,
   border-radius: 20px;
   box-shadow: 0 35px 80 px 0, 0, 0, 0.15;
   transition: 0.5s;
+  margin: 10px;
 }
 
 .card:hover {
@@ -705,7 +697,7 @@ textarea:active,
 }
 
 .card__content__details {
-  padding: 40px;
+  padding: 10px;
   text-align: center;
   width: 100%;
   transition: 0.5s;
@@ -713,11 +705,10 @@ textarea:active,
 }
 
 .card__content__details h4 {
-  font-size: 1.25em;
+  font-size: 1.2em;
   font-weight: 700;
   color: #555;
   line-height: 1.2em;
-  margin-top: 5px;
 }
 
 .card__content__details h4 span {
@@ -730,6 +721,7 @@ textarea:active,
   margin: 20px 0;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .card__content__data h5 {
@@ -753,13 +745,20 @@ textarea:active,
   outline: none;
   font-style: 1em;
   font-weight: 700;
-  background-image: linear-gradient(to right, #3fb8ff, #1d7abd);
   color: white;
   cursor: pointer;
+  background: linear-gradient(to right, rgba(66, 186, 252, 0.8) 0%, #217ebc 25%, rgba(32, 124, 186, 0.8) 75%, rgba(65, 185, 251, 0.8) 100%);
+  background-repeat: no-repeat;
+  background-size: 400% 400%;
+  transition: 0.5s;
 }
 
 .actionBtn button:hover {
-  background-image: linear-gradient(to left, #3fb8ff, #1d7abd);
+  background-position: 100% 100%;
+}
+
+.actionBtn button:active {
+  background-position: 50% 50%;
 }
 
 .contacts-wrapper {
@@ -800,10 +799,11 @@ textarea:active,
   padding-bottom: 5px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: flex-end;
   background-position: bottom center;
   background-repeat: repeat;
+  gap: 10px;
 }
 
 .contacts__items {
@@ -812,6 +812,8 @@ textarea:active,
 }
 
 .contacts__item {
+  margin-left: auto;
+  width: 250px;
   display: flex;
   gap: 10px;
   background-color: white;

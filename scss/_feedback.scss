@@ -94,11 +94,18 @@ form#contact {
 	padding: 10px 20px;
 	border: none;
 	cursor: pointer;
-	background-image: linear-gradient(to right, #3fb8ff, #1d7abd);
-	border-radius: 20px;
+	background: linear-gradient(to right, rgba(66, 186, 252, 0.8)0%, rgba(33, 126, 188, 1)25%, rgba(32, 124, 186, 0.8)75%, rgba(65, 185, 251, 0.8)100%);
+	background-repeat: no-repeat;
+	background-size: 300% 300%;
+	transition: 0.5s;
+	border-radius: 10px;
 
 	&:hover {
-		background-image: linear-gradient(to left, #3fb8ff, #1d7abd);
+		background-position: 100% 100%;
+	}
+
+	&:active {
+		background-position: 50% 50%;
 	}
 }
 

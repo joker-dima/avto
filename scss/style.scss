@@ -354,28 +354,9 @@ li {
 .banner__contacts {
     color: white;
     text-shadow: 1px 1px 1px #000;
-
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    // justify-content: center;
-    height: 500px;
-
-    @media (max-width:600px) {
-        img {
-            margin: 0 auto;
-            margin-top: 50px;
-        }
-    }
-
-    @media (min-width:601px) {
-        img {
-            margin: 0 auto;
-            margin-top: 90px;
-        }
-    }
-
-    // width: 400px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
 // О Компании
@@ -508,7 +489,6 @@ li {
     background-image: url(../img/pattern.png);
     background-position: bottom center;
     background-repeat: repeat;
-    padding: 10px;
 
     h2 {
         text-align: center;
@@ -535,6 +515,7 @@ li {
     border-radius: 20px;
     box-shadow: 0 35px 80 px (0, 0, 0, 0.15);
     transition: 0.5s;
+    margin: 10px;
 
     &:hover {
         height: 450px;
@@ -584,18 +565,18 @@ li {
 }
 
 .card__content__details {
-    padding: 40px;
+    padding: 10px;
     text-align: center;
     width: 100%;
     transition: 0.5s;
     transform: translateY(150px);
 
     h4 {
-        font-size: 1.25em;
+        font-size: 1.2em;
         font-weight: 700;
         color: #555;
         line-height: 1.2em;
-        margin-top: 5px;
+        // margin-top: 5px;
 
         span {
             font-style: 0.75em;
@@ -609,6 +590,7 @@ li {
     margin: 20px 0;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 
     h5 {
         font-size: 1em;
@@ -633,13 +615,19 @@ li {
         outline: none;
         font-style: 1em;
         font-weight: 700;
-        background-image: linear-gradient(to right, #3fb8ff, #1d7abd);
         color: white;
         cursor: pointer;
+        background: linear-gradient(to right, rgba(66, 186, 252, 0.8)0%, rgba(33, 126, 188, 1)25%, rgba(32, 124, 186, 0.8)75%, rgba(65, 185, 251, 0.8)100%);
+        background-repeat: no-repeat;
+        background-size: 400% 400%;
+        transition: 0.5s;
 
         &:hover {
+            background-position: 100% 100%;
+        }
 
-            background-image: linear-gradient(to left, #3fb8ff, #1d7abd);
+        &:active {
+            background-position: 50% 50%;
         }
     }
 }
@@ -685,10 +673,11 @@ li {
     padding-bottom: 5px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-end;
     background-position: bottom center;
     background-repeat: repeat;
+    gap: 10px;
 
 }
 
@@ -698,6 +687,8 @@ li {
 }
 
 .contacts__item {
+    margin-left: auto;
+    width: 250px;
     display: flex;
     gap: 10px;
     background-color: white;
@@ -706,7 +697,6 @@ li {
     position: relative;
     align-items: center;
     padding-right: 10px;
-
 
     a {
         &:hover {
