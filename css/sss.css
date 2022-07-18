@@ -1,0 +1,54 @@
+.bus {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #060c21;
+  margin: 40px;
+}
+
+.bus .bus__glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  display: block;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.bus .bus__content {
+  padding: 20px;
+  color: white;
+}
+
+.bus::before {
+  content: " ";
+  position: absolute;
+  top: -22px;
+  left: -22px;
+  right: -22px;
+  bottom: -22px;
+  background: #e00a0a;
+  z-index: -1;
+}
+
+.bus::after {
+  content: " ";
+  position: absolute;
+  top: -22px;
+  left: -22px;
+  right: -22px;
+  bottom: -22px;
+  background: white;
+  z-index: -2;
+  filter: blur(40px);
+}
+
+.bus:nth-child(1)::before, .bus:nth-child(1)::after {
+  background: linear-gradient(235deg, #89ff00, #010615, #00bcd4);
+}
+/*# sourceMappingURL=sss.css.map */
