@@ -10,6 +10,11 @@
         content="Компания ТЭКИ занимается пассажирскими перевозками в городе Волгоград. У нас большой и современный автопарк, отвественные и опытные водители!" />
     <link rel="stylesheet" href="css/style.css">
     <link href="css/normalize.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico"> <!-- 32×32 -->
+    <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/apple.png"> <!-- 180×180 -->
+    <link rel="manifest" href="manifest.webmanifest">
+
 </head>
 
 <body>
@@ -86,6 +91,26 @@
                 <div class="cards">
                     <div class="card">
                         <div class="imgBx">
+                            <img src="img/cards/bus-3/350x350.jpg" alt="Автобус Higer прокат Волгоград">
+                        </div>
+                        <div class="card__content">
+                            <div class="card__content__details">
+                                <h4>Автобус <br><span>Mercedes</span></h4>
+                                <h4>Стоимость<br><span>от 2000 р час или от 60₽ км</span></h4>
+                                <div class="card__content__data">
+                                    <h5>Пассажировместимость: <br> <span>35 человек</span></h5>
+                                    <h5>Климат-контроль, микрофон</h5>
+
+                                </div>
+                                <br>
+                                <div class="actionBtn">
+                                    <a href="park.html">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="imgBx">
                             <img src="img/cards/bus-1/350x350.jpg" alt="Автобус Higer прокат Волгоград">
                         </div>
                         <div class="card__content">
@@ -121,6 +146,9 @@
                             </div>
                         </div>
                     </div>
+
+
+
                 </div>
 
                 <div class="contacts-wrapper">
@@ -133,7 +161,7 @@
                             </p>
                             <p class="contacts__item">
                                 <img width="30" src="img/icons/email.svg" alt="Иконка написать в ТЭКИ"> <a
-                                    href="mailto:sf@bk.ru">aaa@mail.ru</a>
+                                    href="mailto:Teki34@mail.ru">Teki34@mail.ru</a>
                             </p>
                             <p class="contacts__item">
                                 <img width="30" src="img/icons/telegram.svg" alt="Иконка телеграмм ТЭКИ"> <a
@@ -153,9 +181,10 @@
                                     <p><input maxlength="15" type="number" name="email" id="email" placeholder="Телефон"
                                             required>
                                     <p><textarea maxlength="100" name="message" cols="1" rows="2" id="comment"
-                                            placeholder="Коментарий (необязательно)"></textarea></p>
-                                    <div data-size="compact" class="g-recaptcha"
-                                        data-sitekey="6LeFAB4gAAAAAMxoydugqHVFWVI1kO6IyPUqfGpL"></div>
+                                            placeholder="Ваш вопрос"></textarea></p>
+                                    <div class="g-recaptcha" data-size="compact"
+                                        data-sitekey="6Le0eAIiAAAAAPDtYeFTB5fw8w9quSIAYVNIFMi_">
+                                    </div>
                                     <p class="notification">Нажимая на кнопку «Перезвоните мне», Вы даете согласие на <a
                                             target="_blank" style="text-decoration: underline"
                                             href="personal-data.html">
@@ -198,51 +227,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="js/contact.js"></script>
     <script src="js/scrypt.js"></script>
 </body>
 

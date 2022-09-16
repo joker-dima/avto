@@ -97,7 +97,7 @@ li {
 form#contact {
   background-color: white;
   border-radius: 30px;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0 0 1px 1px #b3b3b3;
   margin: 0 auto;
   max-width: 400px;
@@ -221,6 +221,10 @@ textarea:active,
 
 .notification {
   font-size: 12px;
+}
+
+.g-recaptcha {
+  margin-left: 20px;
 }
 
 .toggle {
